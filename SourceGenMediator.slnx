@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/SourceGenMediator.Benchmarks/SourceGenMediator.Benchmarks.csproj" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/SourceGenMediator.SampleApp/SourceGenMediator.SampleApp.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/SourceGenMediator.Abstractions/SourceGenMediator.Abstractions.csproj" />
+    <Project Path="src/SourceGenMediator.DependencyInjection/SourceGenMediator.DependencyInjection.csproj" />
+    <Project Path="src/SourceGenMediator.Generator/SourceGenMediator.Generator.csproj" />
+    <Project Path="src/SourceGenMediator.Runtime/SourceGenMediator.Runtime.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SourceGenMediator.Tests/SourceGenMediator.Tests.csproj" />
+    <Project Path="tests/SourceGenMediator.IntegrationTests/SourceGenMediator.IntegrationTests.csproj" />
+  </Folder>
+</Solution>
