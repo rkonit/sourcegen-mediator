@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <!-- AOT check: project-level so it does not flow into referenced projects
+       (a global -p:PublishAot would break the netstandard2.0 analyzer).
+       Publish with: dotnet publish -p:EnableAotCheck=true -->
+  <PropertyGroup Condition="'$(EnableAotCheck)' == 'true'">
+    <PublishAot>true</PublishAot>
+    <SelfContained>true</SelfContained>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SourceGenMediator.Abstractions\SourceGenMediator.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\SourceGenMediator.Runtime\SourceGenMediator.Runtime.csproj" />
+    <ProjectReference Include="..\..\src\SourceGenMediator.DependencyInjection\SourceGenMediator.DependencyInjection.csproj" />
+    <ProjectReference Include="..\..\src\SourceGenMediator.Generator\SourceGenMediator.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+</Project>
