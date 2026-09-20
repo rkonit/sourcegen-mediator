@@ -1,0 +1,18 @@
+name: aot
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  aot-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Publish sample as Native AOT
+        run: dotnet publish samples/SourceGenMediator.SampleApp/SourceGenMediator.SampleApp.csproj -f net10.0 -r linux-x64 -p:EnableAotCheck=true -o publish/aot-check --nologo
+      - name: Run AOT binary
+        run: ./publish/aot-check/SourceGenMediator.SampleApp
