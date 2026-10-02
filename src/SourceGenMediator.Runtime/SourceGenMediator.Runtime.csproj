@@ -5,6 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsAotCompatible>true</IsAotCompatible>
+    <Description>AOT-safe runtime for SourceGenMediator: generated-dispatch mediator and notification publishers.</Description>
   </PropertyGroup>
   
   <ItemGroup>

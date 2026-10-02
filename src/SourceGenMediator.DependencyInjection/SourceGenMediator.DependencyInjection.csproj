@@ -5,6 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsAotCompatible>true</IsAotCompatible>
+    <Description>Dependency-injection integration for SourceGenMediator (Microsoft.Extensions.DependencyInjection).</Description>
   </PropertyGroup>
 
   <ItemGroup>

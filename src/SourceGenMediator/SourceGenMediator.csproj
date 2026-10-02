@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAotCompatible>true</IsAotCompatible>
+    <!-- Packing-only project: no library of its own, just aligned dependencies. -->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeSymbols>false</IncludeSymbols>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+    <Description>Compile-time, reflection-free, NativeAOT-safe mediator. Install this package to get the abstractions, runtime, DI integration, and source generator.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SourceGenMediator.Abstractions\SourceGenMediator.Abstractions.csproj" PrivateAssets="none" />
+    <ProjectReference Include="..\SourceGenMediator.Runtime\SourceGenMediator.Runtime.csproj" PrivateAssets="none" />
+    <ProjectReference Include="..\SourceGenMediator.DependencyInjection\SourceGenMediator.DependencyInjection.csproj" PrivateAssets="none" />
+    <ProjectReference Include="..\SourceGenMediator.Generator\SourceGenMediator.Generator.csproj" PrivateAssets="none" />
+  </ItemGroup>
+
+  <!-- The Generator reference is only here so pack records the package dependency;
+       its Roslyn assemblies never compile into this (codeless) package. -->
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);MSB3277</NoWarn>
+  </PropertyGroup>
+
+</Project>

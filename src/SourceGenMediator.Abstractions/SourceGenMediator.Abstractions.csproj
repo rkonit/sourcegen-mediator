@@ -5,6 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsAotCompatible>true</IsAotCompatible>
+    <Description>Public contracts for SourceGenMediator: requests, commands, queries, notifications, streams, and pipeline behaviors.</Description>
   </PropertyGroup>
 
 </Project>

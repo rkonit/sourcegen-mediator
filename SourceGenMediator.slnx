@@ -6,6 +6,7 @@
     <Project Path="samples/SourceGenMediator.SampleApp/SourceGenMediator.SampleApp.csproj" />
   </Folder>
   <Folder Name="/src/">
+    <Project Path="src/SourceGenMediator/SourceGenMediator.csproj" />
     <Project Path="src/SourceGenMediator.Abstractions/SourceGenMediator.Abstractions.csproj" />
     <Project Path="src/SourceGenMediator.DependencyInjection/SourceGenMediator.DependencyInjection.csproj" />
     <Project Path="src/SourceGenMediator.Generator/SourceGenMediator.Generator.csproj" />

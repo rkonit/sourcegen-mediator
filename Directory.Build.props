@@ -1,0 +1,25 @@
+<!-- Shared packaging, versioning, and documentation settings.
+     Version comes from git tags via MinVer (SemVer): tag v1.2.3 to release 1.2.3.
+     Never hardcode <Version> in any project. -->
+<Project>
+  <PropertyGroup>
+    <Authors>Ramesh Kumar</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>mediator;mediatr;messaging;cqrs;source-generator;aot</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- Public APIs intentionally have no XML docs yet; keep the build warning-free. -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <!-- Our tags are v-prefixed (v1.2.3); without this MinVer ignores them. -->
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)LICENSE" Pack="true" PackagePath="\" />
+    <!-- MinVer stamps Version/AssemblyVersion/FileVersion/InformationalVersion from git tags. -->
+    <PackageReference Include="MinVer" Version="7.0.0" PrivateAssets="All" />
+  </ItemGroup>
+</Project>
