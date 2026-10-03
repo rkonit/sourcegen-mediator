@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
@@ -7,7 +7,7 @@
     <IsAotCompatible>true</IsAotCompatible>
     <Description>AOT-safe runtime for SourceGenMediator: generated-dispatch mediator and notification publishers.</Description>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <ProjectReference Include="..\SourceGenMediator.Abstractions\SourceGenMediator.Abstractions.csproj" />
   </ItemGroup>
